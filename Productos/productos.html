@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos en cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        .cuadro {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .imprimir-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<section class="container">
+    <div class="card">
+        <div class="card-image casco-1"></div>
+        <h2>Casco de Seguridad</h2>
+        <p>El casco de seguridad es un elemento crucial para proteger la cabeza de lesiones en entornos laborales peligrosos. Fabricado con materiales resistentes y duraderos, ofrece una barrera de protección contra impactos, golpes y objetos que puedan caer. Este casco cuenta con un diseño ergonómico y ajustable para garantizar comodidad durante su uso.</p>
+        <label for="checkbox-compra">Agregar al carrito:   <input type="checkbox" id="checkbox-compra1" name="checkbox-compra" placeholder=""></label>
+        <a href="" id="precio1">Precio $650</a>
+    </div>
+    <div class="card">
+        <div class="card-image arnes-1"></div>
+        <h2>Arnés para Alturas</h2>
+        <p>El arnés para trabajo en alturas es un equipo esencial para los profesionales que realizan labores en lugares elevados. Diseñado para brindar seguridad y protección, este arnés se ajusta al cuerpo y distribuye de manera uniforme la carga en caso de una caída. Está fabricado con materiales resistentes a la tracción y cuenta con hebillas de alta resistencia para un ajuste seguro.</p>
+        <label for="checkbox-compra">Agregar al carrito:   <input type="checkbox" id="checkbox-compra2" name="checkbox-compra" placeholder=""></label>
+        <a href="" id="precio2">Precio $1300</a>
+    </div>
+    <div class="card">
+        <div class="card-image careta-1"></div>
+        <h2>Careta para Soldador</h2>
+        <p>La careta para soldador es un elemento esencial para los profesionales que trabajan en la industria de la soldadura. Diseñada con un material resistente al calor y a las chispas, protege el rostro y los ojos del soldador de las radiaciones y salpicaduras producidas durante el proceso de soldadura.</p>
+        <label for="checkbox-compra" style="justify-content: center;">Agregar al carrito:   <input type="checkbox" id="checkbox-compra3" name="checkbox-compra" placeholder=""></label>
+        <a href="" id="precio3">Precio $500</a>
+    </div>
+</section>
+
+<div class="cuadro">
+    <script language="javascript">
+        function imprimirTicket() {
+            var checkbox1 = document.getElementById("checkbox-compra1");
+            var checkbox2 = document.getElementById("checkbox-compra2");
+            var checkbox3 = document.getElementById("checkbox-compra3");
+
+            var articulos = 0;
+            var total = 0;
+
+            if (checkbox1.checked) {
+                articulos += 1;
+                total += 650;
+            }
+
+            if (checkbox2.checked) {
+                articulos += 1;
+                total += 1300;
+            }
+
+            if (checkbox3.checked) {
+                articulos += 1;
+                total += 500;
+            }
+
+            var descuento = 0.1 * total;
+            var iva = 0.16 * total;
+            var neto = total - descuento + iva;
+
+            var ticket = "Ticket Seguridad\n\n";
+            ticket += "Artículos: " + articulos + "\n";
+            ticket += "Sub-Total: $" + total + "\n";
+            ticket += "Descuento: $" + descuento + "\n";
+            ticket += "IVA: $" + iva + "\n";
+            ticket += "Total Neto: $" + neto + "\n";
+
+            var fecha = obtenerFechaActual();
+            ticket += "\n" + fecha;
+
+            alert(ticket);
+        }
+
+        function obtenerFechaActual() {
+            var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+            var diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            var f = new Date();
+
+            return diasSemana[f.getDay()] + " " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
+        }
+    </script>
+
+    <form>
+        <div id="reloj" style="font-size:20px;"></div>
+        <input type="button" class="imprimir-btn" value="Imprimir" onclick="imprimirTicket()" />
+    </form>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

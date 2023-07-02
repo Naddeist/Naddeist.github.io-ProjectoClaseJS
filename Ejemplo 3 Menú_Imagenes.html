@@ -1,0 +1,28 @@
+<html>
+<title>Ejemplo Imagenes</title>
+<head>
+  <script language="javaScript">
+  //Ejemplo que muestra una galería de Imagenes
+  function ver_imagen(){
+    if(!document.images)
+    return
+    document.images.img.src=
+    document.imagenes.imagen.options[document.imagenes.imagen.selectedIndex].value
+  }
+</script>
+<body bgcolor="Orange">
+  <center>
+  <h2 >Selecciona una imagen</h2>
+<form name="imagenes">
+  <select name="imagen" size="1" onChange="ver_imagen()">
+  <option value="imagenesProductos/footwear/botas.jpg">Elige imagen</option>
+  <option value="imagenesProductos/arnes/EXPERTIIIRockA.jpg">1</option>
+  <option value="imagenesProductos/gloves/ChemicalGloveUchem3500.webp">2</option>
+  <option value="imagenesProductos/headwear/yellowCasco.png">3</option>
+  </select>
+  </form>
+  <img src="imagenesProductos/gloves/CorteGuantesArmorB.webp" name="img" width=600 height=436 border=6>
+  </center>
+  </body>
+  </head>
+  </html>

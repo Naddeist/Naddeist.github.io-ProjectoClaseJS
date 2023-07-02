@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: #272525;
+}
+
+.container{
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    background: #fff;
+    width: 270px;
+    margin: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image{
+   
+    height: 170px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.casco-1{
+    background-image: url(./imagenes/HeadFace_0.0Overview_1511154_ContCola_540x270.avif);
+}
+.arnes-1{
+    background-image: url(./imagenes/arnés-de-seguridad-rescate-en-alturas-vertical-1.jpg);
+}
+.careta-1{
+    background-image: url(./imagenes/una-visi-n-clara-de-la-soldadura-0.jpg);
+}
+
+.card h2{
+padding: 10px;
+}
+.card p{
+    padding: 10px;  
+}
+.card a{
+    padding: 15px 20px;
+    margin: 20px 50px;
+    color: #fff;
+    background-color: #000;
+    display: block;
+    text-align: center;
+    margin-top: auto;
+   
+}
+
+.card:hover{
+    background-color: #151515;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
+
+.cuadro{
+    background-color: #fff;
+}

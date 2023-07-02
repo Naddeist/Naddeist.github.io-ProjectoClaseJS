@@ -1,0 +1,36 @@
+/* Estilos personalizados para el carrusel */
+.carousel .carousel-inner {
+    max-height: 100%;
+  }
+  
+  .carousel .carousel-item img.carousel-image {
+    max-height: 10%;
+    max-width: 90%;
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+  }
+  
+  .carousel-caption {
+    background-color: black;
+    color: #fff;
+    position: relative;
+    bottom: 0px; /* Cambia la posición vertical */
+    left: 0px; /* Cambia la posición horizontal */
+    padding: 50px;
+    margin-top: 0%;
+    /* Añade más estilos según tus necesidades */
+  }
+  
+  .carousel-caption h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  
+  .carousel-indicators {
+    display: none;
+  }
+  
